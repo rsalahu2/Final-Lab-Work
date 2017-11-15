@@ -19,11 +19,21 @@
       <a href="/" class="w3-bar-item w3-button">Root</button>
       <a href="/static_pages/help" class="w3-bar-item w3-button">Help</a>
       <a href="/static_pages/about" class="w3-bar-item w3-button">About</a>
+      <a href="/carts" class="w3-bar-item w3-button">Carts</a>
+      <a href="/line_items" class="w3-bar-item w3-button">Line Items</a>
     </div>
 
    <div class="w3-container">
     <%= yield %>
    </div>    
 
+<% if session[:user_id] %>
+<ul>
+ <li><%= link_to 'Orders', orders_path %></li>
+ <li><%= link_to 'Products', products_path %></li>
+ <li><%= link_to 'Users', users_path %></li>
+ </ul>
+ <%= button_to 'Logout', logout_path, method: :delete %>
+ <% end %>
   </body>
 </html>

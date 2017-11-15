@@ -1,0 +1,19 @@
+<h1>Editing Cart</h1>
+
+<%= render 'form', cart: @cart %>
+<% @cart.line_items.each do |item| %>
+	    <li><%= item.product.title %></li>
+	  <% end %>
+	</ul>
+	<ul>
+	  <% @cart.line_items.each do |item| %>
+	    <li><%= item.product.price %></li>
+	  <% end %>
+	</ul>
+	<ul>
+	  <% @cart.line_items.each do |item| %>
+	    <li><%= item.product.image_url %></li>
+	  <% end %>
+	</ul>
+<%= link_to 'Show', @cart , class:"w3-button w3-light-blue" %> |
+<%= link_to 'Back', carts_path , class:"w3-button w3-light-blue"  %>
