@@ -19,17 +19,15 @@
       <a href="/" class="w3-bar-item w3-button">Root</a>
       <a href="/static_pages/help" class="w3-bar-item w3-button">Help</a>
       <a href="/static_pages/about" class="w3-bar-item w3-button">About</a>
+      <% if session[:user_id] %>
       <a href="/carts" class="w3-bar-item w3-button">Carts</a>
       <a href="/line_items" class="w3-bar-item w3-button">Line Items</a>
-    
 
-<% if session[:user_id] %>
+ <%= link_to 'Orders', orders_path, class:"w3-bar-item w3-button" %>
+ <%= link_to 'Products', products_path, class:"w3-bar-item w3-button" %>
+ <%= link_to 'Users', users_path, class:"w3-bar-item w3-button" %>
 
- <li><%= link_to 'Orders', orders_path %></li>
- <li><%= link_to 'Products', products_path %></li>
- <li><%= link_to 'Users', users_path %></li>
-
- <%= button_to 'Logout', logout_path, method: :delete %>
+ <%= button_to 'Logout', logout_path, method: :delete, class:"w3-bar-item w3-button" %>
  <% end %>
  </div>
     <div class="w3-container">
