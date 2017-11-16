@@ -1,5 +1,4 @@
 class LineItemsController < ApplicationController
-  class LineItemsController < ApplicationController
 # skip_before_action :authorize, only: :create
  skip_before_action :authorize, only: [:index, :show, :new, :create]
   include CurrentCart
@@ -82,5 +81,5 @@ class LineItemsController < ApplicationController
     #  params.require(:line_item).permit(:product_id, :cart_id)
     params.require(:line_item).permit(:product_id)
     end
-    
 end
+ 
